@@ -25,8 +25,8 @@ fn main() {
                         .map(|lines| -> HashSet<char> { lines
                                 .chars()
                                 .collect() })
-                        .reduce(|acc, set| -> HashSet<char> { acc
-                                .intersection(&set)
+                        .reduce(|acc, set| -> HashSet<char> { (&acc & &set)
+                                .iter()
                                 .map(|c| *c)
                                 .collect() })
                         .unwrap()
