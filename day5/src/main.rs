@@ -1,9 +1,6 @@
-#![feature(saturating_int_impl)]
-
 const INPUT: &str = include_str!("input.txt");
 
 use std::collections::HashSet;
-use std::num::Saturating;
 
 fn main() {
         println!("-- PART 1 --");
@@ -61,7 +58,7 @@ fn main() {
 
         println!("-- PART 2 --");
 
-        let mut seat_ids: HashSet<_> = INPUT 
+        let seat_ids: HashSet<_> = INPUT 
                 .lines()
                 .map(|l| (&l[0..7], &l[7..]))
                 .map(|(r, c)| {
